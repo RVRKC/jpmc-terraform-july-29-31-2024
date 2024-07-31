@@ -1,0 +1,1805 @@
+Terraform for 3 day  july 2024
+
+Masood Ahmed
+9663124747
+masood@rpsconsulting.in
+
+
+Unix               Linux                  Devops                                         Automation
+Solaris          Redhat                Containers/Kubernetes                Shell Scripting
+HPUX           Suse                    Ansible/terraform/jenkins
+                                                 openshfit
+
+
+
+
+RPS Lab details
+
+https://cloud.cdp.rpsconsulting.in/
+
+password is same for all
+
+rps@2345
+
+1	24RIC1462-01    Surya kumar 
+2	24RIC1462-02   Suchitra
+3	24RIC1462-03    Venkat Rao
+4	24RIC1462-04    Spandana
+5	24RIC1462-05    Shaily
+6	24RIC1462-06    Venkatraman
+7	24RIC1462-07     Srikanth  k
+8	24RIC1462-08    Moniseeta
+9	24RIC1462-09     Aruna
+10	24RIC1462-10     Rambabu
+11	24RIC1462-11     Eswar
+12	24RIC1462-12   modita
+13	24RIC1462-13     sridevi
+14	24RIC1462-14      Ravali
+15	24RIC1462-15     Srinivas Makeena
+16	24RIC1462-16     Malvika
+17	24RIC1462-17    Sridhar
+18	24RIC1462-18     Rakesh
+19	24RIC1462-19     Rakesh M
+20	24RIC1462-20      Shardha
+21	24RIC1462-21      santhosh
+22	24RIC1462-22       uma
+23	24RIC1462-23      keerthana
+24	24RIC1462-24      soma
+25	24RIC1462-25      Chaitanya
+26     24RIC1462-26      Rekha 
+27      24RIC1462-27      Tejaswani
+28    24RIC1462-28       Sameer
+29     24RIC1462-29        Ravindar
+30     24RIC1462-30        Anwar Basha
+31    24RIC1462-31        
+32    24RIC1462-32      Surya. V
+33   24RIC1462-33       Rambabu
+34    24RIC1462-34      Rakesh M
+35   24RIC1462-35       satyanaryana
+36   24RIC1462-36      Narasayya
+37   24RIC1462-37      
+
+
+
+ Venkatraman
+  satyajith
+ 
+Tejaswani
+ Srikanth  ch 
+ Rekha 
+Mounika
+Surya. V
+ 
+ Sameer
+Srinivas D
+Ravindar
+ Sameer
+------------------------------------
+
+Terraform 
+IaC   ( Infrastructure as a Code )
+
+its a Automation   tool and part of Devops
+
+Devops  ( Development   + Operations)
+open source
+
+
+tools of devops
+1) Containers   
+2) Kuberenets 
+3) Ansible
+4) Terraform
+5) jenkins
+6) Maven
+   etc  etc 
+
+
+Terraform   for Autmation and for IaC
+
+automation
+1) Terraform 
+2) chef
+3) puppet 
+4) ansible
+5) salt stack etc etc
+
+
+1) Ansible          ---      Orachastration  +  Config manangment tool
+
+
+2) Terraform      ---        orachastration   tool  for managing IaC 
+
+
+?  orachastration    --- Orchestra
+multiple   features
+
+creating  the resources  from the scratch ( new rescource )
+
+Ansible  ---  Config manangment tool   (  manage the existing resources)
+
+ changes for existing resoures eg : 
+install web server on 10 linux or windows machine
+
+
+difference between  terraform  and ansible
+1) terraform we can undo ( revert ) the task ( we can destroy the infra with out writing addiiton code )
+2) Ansible : we can undo  ( revert ) the task using  the same code  ---we need to write the another code
+
+Terraform 
+
+IaC  --- Infra as Code
+
+
+
+Managing the infrastructure  using dashboard ( GUI ) or CLI  tool   we have certain challanges
+
+1) Day 1   Challanges   ( level 1 )
+  a) create the resources  ( ec2 , s3 bucket , EBS , VPC   etc etc )
+
+
+2) Day 2  Challenges   ( level 2)
+monitoring , updating , management 
+
+
+Solution 
+IaC      --- Terraform 
+
+> Can easily maintain consistency and desired state
+>  Infrastructure is written in files, so can be versioned
+
+
+HCL  --- Hashi Corp Language
+
+Compatible with almost all major public and private Cloud service provider
+
+
+https://registry.terraform.io/
+
+
+advantages of  terraform
+1) easy to install
+2) Declarative in  Nature
+3) Idempotent  ( manage  the Idempotancy )
+4) Intelligent Dependency  Resolver
+      file name .tf
+  blocks
+variables
+connectivity details
+main.tf
+ec2
+
+nw.tf
+network
+
+var.tf
+
+aws.tf
+
+terraform apply      
+
+-----------------------------------------
+Lab setup on windows
+1) git bash for windows   --- bash shell   
+2)  vscode   --- editor for   wirting the  terraform code
+3) terraform    --- main software
+
+
+on windows machine
+
+
+I. installing Terraform on windows
+
+
+
+https://developer.hashicorp.com/terraform/install
+
+select the windows  and  AMD64
+
+now set the path                
+a) go to control panel and type path 
+b) click on environmental variables
+c) click on environmental variables
+d) select path  click on edit -- then click on new
+   type the path where terraform.exe is located on click on browse to select
+and complete it 
+e) to check open the cmd prompt and type terraform from any directory it works
+
+
+II. Install Git bash for Windows
+https://www.git-scm.com/downloads
+
+Click here to download the latest 
+
+install the git from downlaod and select all the default setting 
+
+Note : no need to set the path , open the cmd prompt and type git from any where it works
+
+
+
+III. install vscode on windows
+
+https://code.visualstudio.com/download
+---------------
+
+once vscode get install , open the visual studio code 
+then click on extensions and install terraform and hcl extensions
+
+type hcl and install  --- hashicorp HCL
+type terraform and install  --- Hashicorp Terraform  and then install Terraform by Anton Kulikov
+ 
+integrate git bash with terraform
+
+in windows open the visual studio and open terminal from view menu
+and select git bash from the drop down menu
+
+$ terraform
+
+now set the prompt setting for better view
+
+$ cd ( enter for home directory )
+
+$ cat >  .bashrc    ( press enter )
+export PS1='$PWD $ '
+echo "Welcome to  Git Bash "
+
+press ^d  to save the file
+
+
+$ exit 
+
+and open the bash shell again it works and show warnings
+
+$ terraform 
+
+
+End of Lab 
+
+------------------------------
+
+terraform  connectivity 
+
+Client/Server Architecture vs Client-Only Architecture
+
+terraform is Client-Only Architecture
+
+lab 
+create the folder by any name in vscode
+and create a file by any name with .tf
+
+
+
+AWS 
+
+user name  : soma
+1	clouduser	eY4QDltkEkBIjp6W	https://776372889235.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+surya
+2	clouduser	eY4QDltkEkBIjp6W	https://836679376435.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Anwar 
+3	clouduser	eY4QDltkEkBIjp6W	https://106695591904.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Venkat Rao
+4	clouduser	eY4QDltkEkBIjp6W	    https://159157746906.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Spandan
+5	clouduser	eY4QDltkEkBIjp6W	https://131871278221.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Sahaily
+6	clouduser	eY4QDltkEkBIjp6W	https://451762134219.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Venkatramn
+7	clouduser	eY4QDltkEkBIjp6W	https://088686552611.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Ravindra
+8	clouduser	eY4QDltkEkBIjp6W	https://737690139484.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Srikanth ch
+9	clouduser	 eY4QDltkEkBIjp6W	https://479359098877.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Mounika
+10	clouduser	 eY4QDltkEkBIjp6W	https://082884894383.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Aruna
+11	clouduser	 eY4QDltkEkBIjp6W	https://722653208002.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Satyanarayan
+12	clouduser 	eY4QDltkEkBIjp6W	https://665539744064.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Srinivas D
+13	clouduser	 eY4QDltkEkBIjp6W	https://950102116781.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Eswar
+14  clouduser	eY4QDltkEkBIjp6W	https://752401942472.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Srikanth Reddy
+15	clouduser	eY4QDltkEkBIjp6W	https://144654753113.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Sridevi
+16	clouduser	eY4QDltkEkBIjp6W	https://937957322131.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Ravali
+17	clouduser	eY4QDltkEkBIjp6W	 https://203049274650.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Srinivas M
+18	clouduser	eY4QDltkEkBIjp6W	https://877557426876.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Malvika
+19 clouduser	eY4QDltkEkBIjp6W	https://239220459519.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Rakesh Marpina
+20	clouduser	eY4QDltkEkBIjp6W	https://295531694341.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Rakesh muddhireddy
+21	clouduser	eY4QDltkEkBIjp6W	https://021513909304.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Sridhar
+22	clouduser	eY4QDltkEkBIjp6W	https://995415313560.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Villa
+23	clouduser	eY4QDltkEkBIjp6W	https://949962097423.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Shraddha
+24	clouduser	eY4QDltkEkBIjp6W	https://128401223383.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Santosh
+25	clouduser	eY4QDltkEkBIjp6W	https://404483740817.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Uma
+26	clouduser	eY4QDltkEkBIjp6W	https://171591817739.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Keerthana
+27	clouduser	eY4QDltkEkBIjp6W	https://106249960470.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Satyajit 
+28	clouduser	eY4QDltkEkBIjp6W	https://511843743080.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Chaitanya rayaprolu
+29	clouduser	eY4QDltkEkBIjp6W	https://569348992887.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Rekah
+30	clouduser	eY4QDltkEkBIjp6W	https://248641491662.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Moniseeta
+31	clouduser	eY4QDltkEkBIjp6W	https://777332720403.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Sameer
+32	clouduser	eY4QDltkEkBIjp6W	https://510428965752.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Suchitra
+33	clouduser	eY4QDltkEkBIjp6W	https://408023596745.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Tejeswini
+34	clouduser	eY4QDltkEkBIjp6W	https://014393047422.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Surya Vasgiri
+35	clouduser	eY4QDltkEkBIjp6W	https://868453062124.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+mudita
+37	clouduser	eY4QDltkEkBIjp6W  	https://909787914553.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Rambabu
+38	clouduser	eY4QDltkEkBIjp6W	    https://976801726355.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+
+37	clouduser	eY4QDltkEkBIjp6W	https://909787914553.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+Trainer
+1	clouduser	iFMwhfvxyzrYk8TE	https://395827808021.signin.aws.amazon.com/console?region=us-west-2	us-west-2
+
+----------------------------------------------------------------------
+
+check the connectivity form terraform to aws Cloud
+
+login into aws cloud and create the S3 bucket  ( storage )
+destroy the sc3 bucket
+
+
+write the tf code for the same tasks
+
+
+connect from terraform to aws we need the keys
+
+labs 
+1) login into aws cloud and generate the keys for the user
+
+AWS lab 
+
+once login into the aws dashboard 
+then create the keys and copy 
+
+Login into your AWS dash board ----> go to  IAM   and click on users ----> select the user ---> Click on Security Credentials   ----> Click on Create Access Key ----> select  Command Line Interface ( CLI )
+Confirm and clik on Next ----> type any tag value eg: terraform-key --- click on generate access key.
+click on show  access key ,  now copy both  access Key and  Secret Access Key in some note pad to use in the below file
+
+vscode
+1) credentials.tf
+
+provider "aws" {
+access_key = "*****Your AccessKey****"
+secret_key = "*******Your Secret Key****"
+region = "ap-south-1"
+}
+
+2)  main.tf
+resource "aws_s3_bucket" "mybucket" {
+bucket = "rps-terraform-bucket1"
+tags = {
+Name = "myfirstbucket"
+}
+}
+
+
+resource "aws_s3_bucket_object" "myobject" {
+bucket = aws_s3_bucket.mybucket.id
+key = "myprojectpage"
+acl = "private"
+source = "index.html"
+etag = filemd5 ("index.html")
+}
+
+-------------------------------------
+ $ echo "Hello all " > index.html
+
+git bash shell
+$ terraform init
+$ terraform   validate
+$ terraform apply  --auto-approve
+
+( go to dash board and check )
+
+$ terraform  destory --auto-approve
+
+( go to dash board and check )
+
+
+https://survey.zohopublic.com/zs/muClx9
+
+------------------------------------------------------------
+Day 2
+
+Terraform Flow
+
+I.  terraform init    :   it reads the terraform configuration  files  ( any file .tf extension in the current working directory )  and pull the 
+API Plugings and other files from the terraform registry into the local directory as per the provider 
+eg:  AWS    --- aws,  
+      azzure ----   azurerm   
+      GCP  --- google
+
+2.  terrform validate   :    it reads the  terraform configuration files  for connectivity test and check the syntax of .tf
+        check the connectivity 
+        a) hardcode the keys        b) export the keys into the environmental  variables     c) .aws config directory     d) terraform cloud
+
+3.  terraform plan :     it show the plan , what changes will be added , modified , removed  
+       we can capture or save the plan for future refrences  
+
+4. terraform  fmt :  it will format  the code arrangments or indentation   --- optional
+
+5. terraform apply :  it will print the plan first and prompt for conformation  --- yes   
+      read time changes will apply  .
+    $ terraform   apply  --auto-approve
+
+6. terraform destroy   : it will destroy the rescource created with in  terraform  and it reads the terraform.tfstate ( local directory,
+     cloud storage ,  terraform  cloud )
+
+
+--------------------------------------
+how to mangage the AWS cloud login details   ( keys )
+ a) hardcode the keys        
+ b) export the keys into the environmental  variables    
+ c) .aws config directory    by install aws cli  command
+   
+d) terraform cloud
+
+
+lab
+
+how to add the keys as env varaibles
+
+create another folder  in vscode
+$ cd ..
+$  mkdir aws-env
+$  cd aws-env
+
+
+$ env 
+$ env | grep -i aws
+
+$ export  AWS_SECRET_ACCESS_KEY="<key>"
+$ export  AWS_ACCESS_KEY_ID="<key>"
+$ export  AWS_DEFAULT_REGION="<region>"
+
+$ env     | grep -i aws
+$ env   |  grep    -i region
+
+1) create the main.tf 
+
+resource "aws_s3_bucket" "mybucket" {
+  bucket = "masood-bucket"
+  tags = {
+    Name = "myfirstbucket"
+  }
+}
+
+resource "aws_s3_bucket_object" "myobject" {
+  bucket = aws_s3_bucket.mybucket.id
+  key    = "myprojectpage"
+  acl    = "private"
+  source = "index.html"
+  etag   = filemd5("index.html")
+}
+
+
+2) create the index.html
+   echo " welcome "  > index.html
+
+$ terraform init
+$ terraform apply  --auto-approve 
+
+( once it works fine then destroy it )
+
+$  terraform destroy   --auto-approve 
+
+
+-------------------------------------------
+managing  the env  variables for aws
+note :the make the aws env variables permanent  then  add under the profile file as per shell
+eg : for bash shell 
+.bashrc
+
+--------------------------------------------------------------------
+how to install aws cli and create the .aws directory 
+
+$ exit
+
+open the git bash
+$ cd aws-env
+$ env | grep -i aws
+( the variables are not found )
+$   cat ~/.bashrc
+
+
+$ terraform apply --auto-approve 
+( it will fail , beause there are no keys information )
+
+
+labs
+
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+download and install the aws cli  , then close the vscode and open again 
+$ aws  ( enter key it should work )
+
+$  ls -l ~/.aws
+
+$ aws configure list
+
+$ aws configure
+( add the keys details , and for output  type json )
+
+
+$ aws configure list
+$  ls -l ~/.aws
+
+$ terraform apply  --auto-approve
+
+$ aws s3 ls
+
+$ terraform destroy  --auto-approve
+
+-----------------------------------------------------------------------
+how to create ec2 instance from cloud dash board
+
+how to create ec2 isntance from terraform 
+
+key type 
+as   pem 
+
+how to login 
+
+open the comand prompt or in vscode
+
+cmd prompt
+cd Downloads
+
+ssh   -i   <keyname.pem>      ubuntu@<public ip>
+yes
+$ cat /etc/*release*
+
+$ exit
+
+
+from vscode
+
+$ ssh -i $HOME/Downloads/test123.pem  ubuntu@<ip address>
+
+$ exit
+
+
+
+-----------------------
+lab 
+how to create the ec2 instance using terraform 
+
+$ cd ..
+$  mkdir ec2-jpmc
+$ cd ec2-jpmc
+
+ec2.tf
+
+resource "aws_instance" "example_server" {
+  ami           = "ami-0aff18ec83b712f05"        # change the AMI id
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "jpmc-ec2"
+  }
+}
+
+
+$ terraform init
+$ terraform validate
+
+$ terraform apply --auto-approve
+
+( go to dash board and check )
+
+then destory the rescource
+
+$ terraform destroy  --auto-approve
+
+( go to dash board and check )
+
+
+------------------------------------------------------------------------------------
+
+Understanding the Terraform Syntax  ( HCL )
+
+Terraform Blocks
+
+1)  Provider
+
+2) rescource 
+
+3) output 
+
+4) variables
+
+5) provisioner block
+
+6) data block
+
+Note :  if we dont add the provider block  then it will check the rescource block and downlaod the latest version of provider
+
+provider version constraints
+
+https://developer.hashicorp.com/terraform/language/expressions/version-constraints
+
+lets understand the HCL syntax, 
+the hcl file consist of Blocks and arguments
+
+A block is define with in  curly braces and set of arguments in key and value format, representing
+the configuration data
+<block> <parameters>  {
+   key1 = value1
+   key2  = value2 
+}
+
+what is a block and what are  arguments it contains to understand lets create the directory in our vm
+$ mkdir terraform-local-file
+$ cd terraform-local-file
+$ vim local.tf  ( can be any file name but extension with .tf )
+   resource "local_file"  "welcome" {
+   filename = "/tmp/data.txt"
+   content = "Welcome to Terraform"
+   }
+:wq!
+
+Resource: Resources are the most important element in the Terraform language. Each resource block describes one or
+more infrastructure objects, such as virtual networks, compute instances, or higher-level components such
+as DNS records.  
+note: check in terraform documentation , use aws providerd and search for resource
+
+
+In Terraform, a "resource" is a fundamental building block used to represent and manage infrastructure objects in a declarative and idempotent manner. These resources can be physical entities like virtual machines, storage accounts, or network configurations
+
+lets break the code line by line
+1) resource  "local_file"  "welcome" {
+2) filename = "/tmp/data.txt"
+3)   content = "Welcome to Terraform"
+4)   }
+
+1) line is the block , this can be identified as curly braces inside
+     type of block we can see as resource  
+     Resource type we can see as "local_file"  depends on the provider where we want to create the resource, in this type we have the resource type as "local_file"
+for aws it starts with "aws" eg: "aws_s3_bucket"
+
+resource type provides 2 bits of information 
+1st is provider  name before the underscore
+2nd is type of resource
+final the resource name eg: "welcome"  its a logical name or reference  to identify the resource and it can be named any thing
+
+2) line and 3) third line is the argument for resource which are written in key and value arguments  in this case  localfile name and contents to be created
+
+labs with local  resource file
+
+$ mkdir terraform-local-file
+$ cd terraform-local-file
+
+vscode
+local.tf
+
+resource "local_file"  "welcome" {
+   filename = "data.txt"
+   content = "Welcome to Terraform \n"
+   }
+
+save the file ^s
+
+$ terraform init
+$ ls -al  data.txt
+
+--------------------
+cd ..
+$ 
+$ cd s3-file
+main.tf
+
+resource "aws_s3_bucket" "mybucket" {
+  bucket = "masood-bucket"
+  tags = {
+    Name = "myfirstbucket"
+  }
+}
+
+resource "local_file"  "welcome" {
+   filename = "index.html"
+   content = "Welcome to Terraform for JPMC by RPS \n"
+   }
+
+resource "aws_s3_bucket_object" "myobject" {
+  bucket = aws_s3_bucket.mybucket.id
+  key    = "myprojectpage"
+  acl    = "private"
+  source = "index.html"
+ # etag   = filemd5("index.html")
+}
+
+$ terraform init
+$ terraform validate
+$ terraform apply --auto-approve ( after seeing the bucket in aws GUI, please run the below command)
+$ terraform destroy --auto-approve
+
+
+----------------------------------------------------------
+Day 3
+Advance Terraform 
+
+provisioners
+
+variables
+
+git 
+
+
+$ export TF_LOG=TRACE
+( this will enabling logs on the screen , i,e when we execute the terraform commands it will show in the verbose mode on the screen
+--------------
+provisioners   (   ansible --- command module ,    shell commands we can execute in terraform )
+
+note :  1)  provisioner will get execute only once at the during the first apply command.  
+ ( when run the apply again the the block will get execute and provisioners will not get
+ execute )
+
+to execute the provisoner again then taint it 
+
+$ terraform apply 
+
+2) when the provisoners will get error  it will  abort the execution of code  ( its has not executed sucessfully , then   it will add taint in the terraform.tfstat file )
+
+
+
+there are different type of provisioners
+
+1) File provisioner                  ---     copy the files and directories from local terraform system into the remote cloud machine ( ec2 instance)
+
+2) local-exec  provisioner        ---  it will be use full to run some task, command/script in the same terraform machine insted of  remote machine
+
+3) Remote-exec provisioner   ----  to perform the tasks remotly once the ec2 instance has created from rescource block  
+                                                       use case: install any software , config changes to be done on remote machine
+                                                      ansible play book  -- 
+
+
+example of local  provisioner
+
+local-exec  provisioner  
+
+labs 
+
+
+Example 1
+$ mkdir prov-local
+$ cd prov-local
+craete the file main.tf  in  vscode
+ main.tf
+
+resource "null_resource"  "operation1" {             
+provisioner "local-exec" {                                      
+command = "echo 'Hello all' >> file1.txt"
+}
+}
+
+resource "null_resource"  "operation2" {
+provisioner "local-exec" {
+command = "echo 'HEllo all again from operation2' >> file1.txt"
+}
+}
+
+
+$ terraform init 
+$ terraform validate
+$ terraform apply --auto-approve
+
+note :  if we execute  terraform apply again the provisioner will get executed 
+edit the main.tf and add some more text in the first block
+
+$ terraform apply --auto-approve
+
+( it wont execute the provisoner block )
+
+taint it
+$ grep -i taint  terraform.tfstate
+
+$ terraform.exe taint null_resource.operation1
+
+$ grep -i taint  terraform.tfstate
+
+
+$ terraform apply --auto-approve
+( the code gets executed )
+
+-------------------------------------------------
+
+Example 2 
+
+2) Example of  local-exec  , getting info from cloud and store locally
+$ cd ..
+$ mkdir  aws-local-prov
+$ cd aws-local-prov
+
+
+ local-exec1.tf
+
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
+
+resource "aws_instance" "webserver" {
+  ami           = "ami-0fc5d935ebf8bc3bc"
+  instance_type = "t2.micro"
+
+tags = {
+    Name = "rps-web"
+}
+
+  provisioner "local-exec" {
+    command = "echo ${aws_instance.webserver.public_ip} >> ips.txt"
+  }
+}
+
+^s ( save )
+
+only apply the code the instance gets created and the file ips.txt gets created
+$ terraform init
+
+$ terraform validate
+
+$ terraform plan
+( note : we cant' see the provisoners task in the plan )
+
+$ terraform apply --auto-approve
+( go the dash board and check for instance and  public ip )
+
+$ ls -l
+
+$ cat ips.txt
+
+Note: but once destroy the infra  the file ips.txt wont be deleted , this is the limitation of provisioner
+
+-------------------------------------------------
+
+Provisioner failure behavior
+
+when the provisioner block get fail  (  terraform will execute the provisioner at the end , after resource block )
+it add taint status in the terraform.tfstate file
+onece the taint is added , when ever we make small change like tag name change and apply .
+it will destroy the resource and again apply 
+
+
+lab 
+
+create  new directory 
+$ cd ..
+$ mkdir tf-taint
+$ cd mkdir tf-taint
+main.tf
+
+resource "aws_instance" "webserver" {
+  ami           = "ami-05191fdb0e7f2f8e8"
+  instance_type = "t2.micro"
+
+tags = {
+    Name = "rps2-web"
+}
+
+  provisioner "local-exec" {
+    command = "the server's ipaddress is  ${self.private_ip} > ips.txt"
+on_failure = continue
+  }
+
+ provisioner "local-exec" {
+    when = destroy
+    command = "rm ips.txt"
+}
+}
+
+-----------------------
+remote and file   provisioner
+
+
+provisioner  remote-exec
+
+we can execute the commands or script on the remote system from the terraform code
+
+1) create new ec2 instance with ubuntu OS 
+2) configure this  ubuntu linux  machine as web server with the help of  external script
+3) check the OS and  web server connectivity 
+
+solution
+
+a) login into aws dash board and create the login keys pairs 
+
+b) writing the code
+    a)  security group
+         firewall
+    b) ec2 instance , associate the ec2 instance  with the security group  and the keys
+
+c) create the script for installing the apache web server
+
+
+
+labs
+1)  we will login into aws dashboard and create the key pairs
+
+to perform the lab 
+go to the  AWS Console home dash board and type key pairs on search  key pair
+ec2  ----> 
+click on Create key pair ----> Name ---> type any name eg: web-server
+select 
+RSA  
+.pem   ( to connect later with ssh )
+
+create a directoy by name  ubuntu-webserver
+
+$  cd ..
+$ mkdir ubuntu-webserver
+$ cd ubuntu-webserver
+create the file  security-allow.tf
+
+resource "aws_security_group" "allow_ssh" {
+  name        = "tf_Remote_Provisioner"
+  description = "Allow SSH and HTTP Inbound Traffic"
+
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Run http server"
+  }
+
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Enable  SSh"
+  }
+
+# Outboud Rule for install softwares
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "Remote_Provisioner"
+  }
+}
+
+
+
+-------------------------
+
+$ cp /c/Users/Administrator/Downloads/web-server.pem  .      # ( dot at the end ) 
+$ ls -l
+$ chmod -c  600 web-server.pem
+
+600
+
+6  --- read and write for owner
+0   --- group  no access
+0   --- other   no access
+
+create the file main.tf in the same directory
+
+main.tf
+
+resource "aws_instance" "rpsweb" {
+  ami                    = "ami-05e00961530ae1b55"  # change  id matches to ubuntu linux
+  instance_type          = "t2.micro"
+  key_name               = "web-server"  # provide the same key as  created in dashboard
+  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+  tags = {
+    Name = "ubuntu-websever"   # change the name
+  }
+
+provisioner "file" {
+    source      = "C:\\Users\\Administrator\\jpmc-terraform\\ubuntu-webserver\\apache2.sh"
+    destination = "/tmp/apache2.sh"
+  }
+  # Change permissions on bash script and execute from ec2-instance.
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x  /tmp/apache2.sh",
+      "sudo /tmp/apache2.sh",
+    ]
+  }
+  connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    insecure    = "true"
+    private_key = file("C:\\Users\\Administrator\\jpmc-terraform\\ubuntu-webserver\\web-server.pem")
+    host        = self.public_ip
+  }
+}
+
+output "instance_public_ip" {
+  value = aws_instance.rpsweb.public_ip
+}
+
+
+---------------------------
+create the apache2.sh script file
+apache2.sh
+
+#!/bin/sh         
+sudo apt update
+sudo apt update
+sudo apt install apache2 -y
+sudo systemctl start apache2
+sudo systemctl enable apache2
+echo "<body text="blue" bgcolor="pink">"  > /var/www/html/index.html
+echo "<marquee>Welcome to RPS Web Server by Masood Ahmed !!!</marquee> " >> /var/www/html/index.html
+echo "</body>"  >> /var/www/html/index.html
+
+
+
+$ chmod +x  apache2.sh
+$ ls -l
+
+$ terraform init
+
+$ terraform validate
+
+$ terraform plan
+
+$ terraform apply --auto-approve
+
+browser 
+http://<ip address>
+
+connecting to the os
+$ ssh -i <.pem key >    ubuntu@<ip>
+
+--------------------------------------------
+create a account in Git Hub
+
+
+--------------------------------------------
+
+Variables
+
+to store the data and reuse the data , 
+
+I. define and use the variables
+II.  terraform.tfvars    file
+
+
+I. define and use the variables
+
+types of varaibles
+a) input type variables
+b) Special variables
+
+a) input type variables
+i) string     -- character
+ii) numerical   --- numbers
+iii) boolean   --- true / false
+
+
+b) Special variables
+ i) list
+ii) maps
+iii) object
+iv) tuple
+
+
+how to define and call the variables in terraform 
+
+we can use internal variables and external variables
+
+
+To work with  the vaiables  use the keyword "variable"  in the code file     
+
+a) create the seprate .tf file only for variables
+b)  we can add the variables in any .tf file
+
+
+its always better to have seprate file for vaiables, we can define the variables in any .tf file
+
+
+syntax
+
+os=windows
+
+variable "myvar" {       # variables declaration
+   type = string         # variable type  
+   description = "Enter the Training Details"   # variable descripting gets printed on screen
+   default = "This is Terraform Training  By RPS" # default Value with out prompting for input
+
+note: descripting of variable is optional 
+
+note : if we do not give default then it will be interactive input
+
+to call the variable in the same or other file use  the syntax
+echo ${var.<vairable name>}
+
+
+labs
+
+using variables
+
+create some directory
+$ cd ..
+$  mkdir var-sample
+$ cd var-sample
+create vars.tf file it can be any name
+
+
+  variable "myvar" {       # variables declaration
+   type = string         # variable type  
+   description = "Enter the Training Details"   # variable descripting gets printed on screen
+   default = "This is Terraform Training  By RPS" # default Value with out prompting for input
+}
+
+
+create main.tf file it can be any name
+main.tf
+
+resource "null_resource" "operation1" {
+provisioner "local-exec" {
+command = "echo ${var.myvar}  Terraform Rocks >> file1.txt"
+}
+}
+
+$ terraform init
+$ terraform validate
+
+$ terraform apply --auto-approve
+
+$ ls -l 
+$   cat file1.txt
+
+-----------------------------------------------
+examples
+
+using list and map 
+create a directory by name 
+create the file
+vars1.tf
+
+variable "users" {
+type = list
+default = ["user1","user2","user3"]
+description = "List of users on the server"
+}
+
+create the second file
+main.tf
+
+resource "null_resource" "operation2" {
+provisioner "local-exec" {
+command = "echo users planned to have on servers are : ${var.users[1]}, ${var.users[0]} >> file1.txt"
+}
+}
+output "users_are" {
+  value = "${var.users[1]}, ${var.users[0]}"
+}
+
+
+$ terraform init 
+$ terraform apply  -auto-approve
+$ ls -l
+$ cat  file1.txt 
+( can see user2 and then user1 )  
+
+note : postional starts with 0 
+
+
+b) Maps   we refer to the key value
+
+example
+
+vars2.tf
+
+variable "flavors" {
+type = map
+description = "Flavors for servers allowed in this project"
+default = {
+"flavor1" = "t2.micro"
+"flavor2" = "t3.micro"
+"flavor3" = "c3.xlarge"
+}
+}
+
+main.tf
+resource "null_resource" "operation3" {
+provisioner "local-exec" {
+command = "echo Flavors Allowed in this project are : ${var.flavors["flavor3"]} >> file1.txt"
+}
+}
+
+output "Flavours_are" {
+  value = "${var.flavors["flavor3"]}"
+}
+
+----------------------------------------
+open variables  ( define the type )
+
+variable "os" {
+  default="abc" 
+}
+
+---------------------------------------
+using TFVARS  
+
+
+lab 
+
+labs
+
+example 
+
+Note : remove the variable values ,i,e default parameters 
+
+$ cd ..
+$ mkdir vars_tfvars
+$ cd  vars_tfvars
+
+create the file
+vars.tf
+
+variable "myvar" {
+   type = string
+   description = "My first var of type string"
+}
+
+variable "yourvar" {
+   type = number
+   description = "Number of days of training"
+}
+
+variable "newvar" {
+   type = bool
+}
+
+----------------------------
+create the file
+terraform.tfvars
+
+myvar = "This is Terraform training"
+yourvar = "5"
+newvar = true
+
+----------------------------
+create the file
+main.tf
+
+resource "null_resource" "operation3" {
+provisioner "local-exec" {
+command = "echo ${var.myvar} for ${var.yourvar} days  ${var.newvar}   in vars file>> file1.txt"
+}
+}
+
+
+output "Variables_are" {
+  value = "${var.myvar} ${var.yourvar}  days ${var.newvar}"
+}
+
+----------------------------------------------
+$ terraform init
+$ terraform apply --auto-approve
+$ cat  file1.txt
+
+
+create another file
+testing.tfvars
+
+change the value of variables 
+
+myvar = "JPMC Customized Training for Terraform"
+yourvar = "15"
+newvar = true
+
+^s ( save )
+
+$ terraform apply   -var-file="testing.tfvars"
+
+note we can create multiple .tfvars with different name and pass the file name while using terrform apply 
+
+$ terraform apply   -var-file="testing.tfvars"   --auto-approve
+
+-----------------------------------
+Data block 
+
+Data source
+
+this will help to read the data and attributes ( resource ) from infra provided outside the terraform ,
+
+ and add  them under the terraform code file will use the keyword  "data"  and using data block 
+
+
+if we want to fetch in information from the aws cloud into terraform 
+
+
+lab 
+example 
+$ cd ..
+$ mkdir data-s3
+$ cd data-s3
+
+login in aws account and create the bucket manually by name rps-bucket1
+
+create the file
+main.tf
+
+data "aws_s3_bucket" "existing_bucket" {
+  bucket = "rps-bucket1"    # change the bucket name 
+}
+
+
+
+output "bucket_details" {
+  value = {
+    id     = data.aws_s3_bucket.existing_bucket.id
+    arn    = data.aws_s3_bucket.existing_bucket.arn
+    region = data.aws_s3_bucket.existing_bucket.region
+    name   = data.aws_s3_bucket.existing_bucket.bucket_domain_name
+  }
+}
+
+
+$ terraform init
+$ terraform apply 
+$ terraform ouput      ( this command will read all the output from terraform.tfstate file )
+
+
+--------------------------------------------------
+how to fetch the latest available ami details and add them under terraform  code for creating new ec2 instance
+using data block
+
+
+
+
+data block
+
+main.tf
+
+data "aws_ami" "latest-amazon-linux-image" {
+  most_recent = true
+  owners = ["amazon"]
+  filter {
+    name = "name" 
+    values = ["amzn2-ami-kernel-*-x86_64-gp2"]
+  }
+  filter {
+    name = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+output "aws-ami_id" {
+  value = data.aws_ami.latest-amazon-linux-image.id
+}
+
+# --------- Create the ec2 instance ------------- #
+
+
+resource "aws_instance" "myapp-server" {
+    ami = data.aws_ami.latest-amazon-linux-image.id
+    instance_type = "t2.micro"
+
+tags = {
+    Name = "rps-web"
+}
+}
+
+$ terraform init
+$ terraform validate
+$ terraform apply --auto-approve
+
+( dash board and check )
+
+$ terraform destroy --auto-approve
+
+-----------------------------------------------------
+
+webserver project 
+
+1)  security group   ( firewalls )
+2) variables and tfvars file
+3) create the login keys   
+  create the ssh keys  ( from cmd line ),  and upload the keys into cloud using terraform 
+4) discover the aws ami details   for ubuntu OS and create
+5) using the keys  will install the web server with the script 
+6) testing
+
+
+lab 
+
+step1 
+$ cd ..
+$ 
+
+$ cd  myweb-dynamic
+a) create the new directory/folder by name aws-webserver
+b) security group  
+create the file security-allow.tf
+
+security-allow.tf
+
+resource "aws_security_group" "allow_ssh" {
+  name        = "tf_Remote_Provisioner"
+  description = "Allow SSH and HTTP Inbound Traffic"
+
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Run http server"
+  }
+
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Enable  SSh"
+  }
+
+# Outboud Rule for install softwares
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "Remote_Provisioner"
+  }
+}
+
+^s ( save )
+
+test the code and apply
+$ terraform init
+$ terraform validate
+$ terraform apply --auto-approve
+-------------------------------------------------------------
+step 2
+Generate the ssh keys
+$ ls -l   ~/.ssh
+
+$ ssh-keygen
+( enter key for all inputs )
+$ 
+$ ls -l   ~/.ssh
+( can see the keys now )
+-----------------------------------------------------------------------
+step 3
+variables  data file
+$ ls -ld  ~/.ssh
+$  ls -l  ~/.ssh
+
+create the terraform.tfvars
+
+terraform.tfvars
+
+instance_type  =  "t2.micro"
+public_key_location = "C:\\Users\\Administrator\\.ssh\\id_ed25519.pub"
+private_key_location = "C:\\Users\\Administrator\\.ssh\\id_ed25519"
+env_prefix = "dev"
+^s ( save )
+--------------------------------------------------------------------------
+step 4 
+create the main.tf
+
+main.tf
+
+provider "aws" {
+  region = "us-west-2"
+}
+
+variable instance_type {}
+variable public_key_location {}
+variable private_key_location {}
+variable env_prefix {}
+
+
+# fetch the information about ubuntu linux ami details
+
+data "aws_ami" "latest-ubuntu-linux-image" {
+  most_recent = true
+  owners = ["amazon"]
+  filter {
+    name = "name" 
+  
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-*-amd64-server-*"]
+  }
+  filter {
+    name = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+output "aws-ami_id" {
+  value = data.aws_ami.latest-ubuntu-linux-image.id
+}
+
+^ s ( save )
+
+
+validate and run the code 
+
+$ terraform validate
+$ terraform apply --auto-approve
+
+( go dash board and check )
+---------------------------------
+step 5
+
+edit the main.tf file to create the ec2 instance with ssh-key 
+
+main.tf
+
+# creating the ec2 instance
+output "ec2-public_ip" {
+  value = aws_instance.myapp-server.public_ip
+}
+
+resource "aws_key_pair" "ssh-key" {
+  key_name = "server-key"        # key to be created under aws key pairs
+  public_key = file(var.public_key_location)
+}
+
+resource "aws_instance" "myapp-server" {
+  ami =  data.aws_ami.latest-ubuntu-linux-image.id
+  instance_type = var.instance_type
+  associate_public_ip_address = true
+  key_name = aws_key_pair.ssh-key.key_name
+ vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+
+  tags = {
+    Name: "${var.env_prefix}-server"
+  }
+}
+
+^s ( save )
+
+
+validate and run the code 
+
+$ terraform validate
+$ terraform apply --auto-approve
+
+( go dash board and check )
+
+
+check the connective by loggin into the instance
+
+ssh -i ~/.ssh/<private key>  ubuntu@public ip
+
+$ ssh -i ~/.ssh/id_ed25519  ubuntu@3.111.31.174
+
+$ cat /etc/*release*
+
+$ exit 
+
+$ 
+------------------------------------------------------------
+step 6  
+create the apache2.sh script file
+
+apache2.sh
+
+
+^s ( save )
+
+make it executable
+
+ $ chmod +x  apache2.sh
+------------------------------------------------------
+step 7
+
+create the provisioner for  injecting the script
+edit the main.tf file and add above the last braces
+
+
+provisioner "file" {
+    source      = "C:\\Users\\Administrator\\jpmc-terraform\\myweb-dynamic\\apache2.sh"
+    destination = "/tmp/apache2.sh"
+  }
+  # Change permissions on bash script and execute from ec2-instance.
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x  /tmp/apache2.sh",
+      "sudo /tmp/apache2.sh",
+    ]
+  }
+
+connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = file(var.private_key_location)
+    host        = self.public_ip
+  }
+
+
+^s ( save and exit )
+
+$ terraform apply --auto-approve 
+( if it does not load the provisioner )
+then
+
+taint the rescource  
+or 
+
+$ terraform destroy --auto-approve 
+and
+$ terraform apply --auto-approve 
+
+test the web page
+
+http://<public ip>
+
+---------------------------
+DRY principle
+create and use the modules
+
+kuberenets cluster
+
+AWS  -- eks
+azure  -- AKS
+gcp   --  GKS
+
+
+master node
+worker nodes
+
+
+https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks
+
+
+
+variable instance_type {}
+variable public_key_location {}
+variable private_key_location {}
+variable env_prefix {}
+
+
+# fetch the information about ubuntu linux ami details
+
+data "aws_ami" "latest-ubuntu-linux-image" {
+  most_recent = true
+  owners = ["amazon"]
+  filter {
+    name = "name" 
+  
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-*-amd64-server-*"]
+  }
+  filter {
+    name = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+output "aws-ami_id" {
+  value = data.aws_ami.latest-ubuntu-linux-image.id
+}
+
+# creating the ec2 instance
+output "ec2-public_ip" {
+  value = aws_instance.myapp-server.public_ip
+}
+
+resource "aws_key_pair" "ssh-key" {
+  key_name = "server-key"        # key to be created under aws key pairs
+  public_key = file(var.public_key_location)
+}
+
+resource "aws_instance" "myapp-server" {
+  ami =  data.aws_ami.latest-ubuntu-linux-image.id
+  instance_type = var.instance_type
+  associate_public_ip_address = true
+  key_name = aws_key_pair.ssh-key.key_name
+ vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+
+  tags = {
+    Name: "${var.env_prefix}-server"
+  }
+provisioner "file" {
+    source      = "C:\\Users\\Administrator\\jpmc-terraform\\myweb-dynamic\\apache2.sh"
+    destination = "/tmp/apache2.sh"
+  }
+  # Change permissions on bash script and execute from ec2-instance.
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x  /tmp/apache2.sh",
+      "sudo /tmp/apache2.sh",
+    ]
+  }
+
+connection {
+    type        = "ssh"
+    user        = "ubuntu"
+    private_key = file(var.private_key_location)
+    host        = self.public_ip
+  }
+}
+
+
+
+https://github.com/masoodmls/jpmc-terraform-july-2024.git
+
+git clone https://github.com/masoodmls/jpmc-terraform-july-2024.git
+
+
+------------------------
+adding code in git
+
+goto github add the repository
+
+from command prompt
+
+
+$ git init
+$ git add README.md
+$ git commit -m "first commit"
+$ git branch -M main
+$ git remote add origin git@github.com:masoodmls/jpmc-test.git       ( copy and paste the details from the repo )
+$ git push -u origin main
